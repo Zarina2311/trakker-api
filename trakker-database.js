@@ -10,7 +10,7 @@ const ignoreEmptyResultsError = (err) => {
 
 module.exports = () => {
   const connectionString = process.env.DATABASE_URL;
-  const db = pgp({ connectionString, ssl: true });
+  const db = pgp({ connectionString });
 
   console.log("Postgres DB => ", connectionString);
   db.one("SELECT true AS success")
