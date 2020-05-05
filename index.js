@@ -7,6 +7,11 @@ const PORT = process.env.PORT || DEFAULT_PORT;
 const db = TrakkerDatabase();
 const api = express();
 
+api.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE");
+  next();
+});
 api.use(bodyParser.urlencoded({ extended: false }));
 
 // to get all columns
