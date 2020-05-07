@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const TrakkerDatabase = require("./trakker-database");
+const morgan = require("morgan");
 
 const DEFAULT_PORT = 3001;
 const PORT = process.env.PORT || DEFAULT_PORT;
